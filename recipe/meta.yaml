@@ -1,6 +1,6 @@
 {% set name = "django-appconf" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "6a4d9aea683b4c224d97ab8ee11ad2d29a37072c0c6c509896dd9857466fb261" %}
+{% set version = "1.0.4" %}
+{% set sha256 = "be58deb54a43d77d2e1621fe59f787681376d3cd0b8bd8e4758ef6c3a6453380" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -30,7 +30,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'An app to handle configuration defaults of packaged Django apps gracefully'
+  summary: An app to handle configuration defaults of packaged Django apps gracefully
   description: |
     A helper class for handling configuration defaults of packaged Django apps gracefully. This app precedes Django's 
     own AppConfig classes that act as "objects [to] store metadata for an application" inside Django's app loading 
