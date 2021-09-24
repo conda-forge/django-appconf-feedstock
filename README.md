@@ -5,9 +5,13 @@ Home: https://github.com/django-compressor/django-appconf
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/django-appconf-feedstock/blob/master/LICENSE.txt)
 
 Summary: An app to handle configuration defaults of packaged Django apps gracefully
+
+Development: https://github.com/django-compressor/django-appconf
+
+Documentation: https://readthedocs.org/projects/django-appconf/
 
 A helper class for handling configuration defaults of packaged Django apps gracefully. This app precedes Django's
 own AppConfig classes that act as "objects [to] store metadata for an application" inside Django's app loading
@@ -42,6 +46,7 @@ Installing `django-appconf` from the `conda-forge` channel can be achieved by ad
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `django-appconf` can be installed with:
@@ -112,9 +117,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
