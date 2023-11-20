@@ -1,6 +1,6 @@
 {% set name = "django-appconf" %}
-{% set version = "1.0.4" %}
-{% set sha256 = "be58deb54a43d77d2e1621fe59f787681376d3cd0b8bd8e4758ef6c3a6453380" %}
+{% set version = "1.0.6" %}
+{% set sha256 = "cfe87ea827c4ee04b9a70fab90b86d704cb02f2981f89da8423cb0fabf88efbf" %}
 
 package:
   name: {{ name|lower }}
