@@ -1,29 +1,34 @@
 {% set name = "django-appconf" %}
-{% set version = "1.0.4" %}
-{% set sha256 = "be58deb54a43d77d2e1621fe59f787681376d3cd0b8bd8e4758ef6c3a6453380" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-appconf-{{ version }}.tar.gz
+  sha256: be3db0be6c81fa84742000b89a81c016d70ae66a7ccb620cdef592b1f1a6aaa4
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python
-    - setuptools
   run:
-    - python
-    - django >=1.8
+    - python >=3.6
+    - django
+
+test:
+  imports:
+    - appconf
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/django-compressor/django-appconf
@@ -43,3 +48,4 @@ extra:
   recipe-maintainers:
     - cshaley
     - sannykr
+    - rxm7706
