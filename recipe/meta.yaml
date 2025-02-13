@@ -1,5 +1,5 @@
 {% set name = "django-appconf" %}
-{% set version = "1.0.6" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-appconf-{{ version }}.tar.gz
-  sha256: cfe87ea827c4ee04b9a70fab90b86d704cb02f2981f89da8423cb0fabf88efbf
+  sha256: 9fcead372f82a0f21ee189434e7ae9c007cbb29af1118c18251720f3d06243e4
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - django
+    - django 
 
 test:
   imports:
